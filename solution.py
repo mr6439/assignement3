@@ -39,7 +39,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
    # Send RCPT TO command and print server response.
    # Fill in start
    # Fill in end
-   rcptTo = "RCPT TO: <mohanraghu@gmail.com> \r\n"
+   rcptTo = "<mohanraghu@gmail.com>\r\n"
    clientSocket.send(rcptTo.encode())
    recv3 = clientSocket.recv(1024).decode()
    print(recv3)
@@ -59,7 +59,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
    clientSocket.send(subject.encode())
    clientSocket.send(msg.encode())
    recv_msg = clientSocket.recv(1024).decode()
-   print(recv_msg.decode())
+   print(recv_msg)
 
    # Message ends with a single period.
    # Fill in start
